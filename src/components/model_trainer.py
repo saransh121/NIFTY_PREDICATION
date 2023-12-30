@@ -1,0 +1,1 @@
+## all codes related to traing of a data
