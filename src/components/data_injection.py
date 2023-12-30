@@ -1,0 +1,1 @@
+## this file is reponsiable for reading the files and changing them for trainng and testing
