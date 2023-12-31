@@ -6,7 +6,7 @@ from src.exception import customeException
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-class injection_configue:
+class _injection_configue:
     def __init__(self):
         self.train_path: str = os.path.join('artifact','train.csv')
         self.test_path : str = os.path.join('artifact','test.csv')
@@ -14,7 +14,7 @@ class injection_configue:
     
 class data_injection():
     def __init__(self):
-        self.path = injection_configue()
+        self.path = _injection_configue()
     def data_injection_start(self):
         try:
             df1 = pd.read_csv('notebooks\\Datasets\\data\\test.csv')
@@ -45,6 +45,10 @@ class data_injection():
             test_set.to_csv(self.path.test_path,index=False,header=True)
 
             logging.info('training and test data store ended')
+            return (
+                self.path.test_path,
+                self.path.train_path
+            )
             
         except Exception as e:
             logging.info(customeException(e.__str__(),sys).__str__())
