@@ -30,7 +30,7 @@ class data_injection():
             logging.info('Train_test Slipt Started')
 
             y = df['Survived']
-            train_set , test_set = train_test_split(df,stratify=y,random_state=56)
+            train_set , test_set = train_test_split(df,stratify=y,random_state=56,train_size=0.8)
 
             logging.info('training and test data store started')
             #os.path.dirname: 
